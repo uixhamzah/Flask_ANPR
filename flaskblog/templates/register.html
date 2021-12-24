@@ -1,0 +1,127 @@
+<!-- View page Header -->
+{% include 'dashboard/navbar.html' %}
+
+<body>
+
+    <!-- Sidebar -->
+    {% include 'dashboard/sidebar.html' %}
+    <!-- End Sidebar -->
+
+    <!-- Main content -->
+    <div class="main-content" id="panel">
+
+        <!-- Topnav -->
+        {% include 'dashboard/topnav.html' %}
+        <!-- End TopNav -->
+
+        <!-- Header -->
+        <!-- Header -->
+        <div class="header bg-primary pb-6">
+            <div class="container-fluid">
+                <div class="header-body">
+                    <div class="row align-items-center py-4">
+                        <div class="col-lg-6 col-7">
+                            <h6 class="h2 text-white d-inline-block mb-0">Default</h6>
+                            <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                                <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                                    <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                                    <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Upload Plate Number Manual
+                                    </li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                    <!-- Card stats -->
+                    <div class=" row ">
+                        <div class="col-xl-12 col-md-6 ">
+                            <div class="card card-stats ">
+                                <!-- Card body -->
+                                <div class="card-body ">
+                                    <div class="row ">
+                                        <div class="col ">
+                                            <h5 class="card-title text-uppercase text-muted mb-0 ">Silakan Upload foto yang berisi plate number anda</h5>
+                                            <!-- Register Plate Number -->
+                                            <form method="POST" action="">
+                                                {{ form.hidden_tag() }}
+                                                <fieldset class="form-group">
+                                                    <legend class="border-bottom mb-4">Registration for Unidentified Vehicle
+                                                    </legend>
+                                                    <div class="form-group">
+                                                        {{ form.username.label(class="form-control-label") }} {% if form.username.errors %} {{ form.username(class="form-control form-control-lg is-invalid") }}
+                                                        <div class="invalid-feedback">
+                                                            {% for error in form.username.errors %}
+                                                            <span>{{ error }}</span> {% endfor %}
+                                                        </div>
+                                                        {% else %} {{ form.username(class="form-control form-control-lg") }} {% endif %}
+                                                    </div>
+                                                    <div class="form-group">
+                                                        {{ form.email.label(class="form-control-label") }} {% if form.email.errors %} {{ form.email(class="form-control form-control-lg is-invalid") }}
+                                                        <div class="invalid-feedback">
+                                                            {% for error in form.email.errors %}
+                                                            <span>{{ error }}</span> {% endfor %}
+                                                        </div>
+                                                        {% else %} {{ form.email(class="form-control form-control-lg") }} {% endif %}
+                                                    </div>
+                                                </fieldset>
+                                                <div class="form-group">
+                                                    {{ form.licenceplate.label(class="form-control-label") }} {% if form.licenceplate.errors %} {{ form.licenceplate(class="form-control form-control-lg is-invalid") }}
+                                                    <div class="invalid-feedback">
+                                                        {% for error in form.licenceplate.errors %}
+                                                        <span>{{ error }}</span> {% endfor %}
+                                                    </div>
+                                                    {% else %} {{ form.licenceplate(class="form-control form-control-lg") }} {% endif %}
+                                                </div>
+                                                <div class="form-group">
+                                                    {{ form.submit(class="btn btn-outline-info") }}
+                                                </div>
+                                            </form>
+                                            <!-- </div> -->
+                                            <div class="border-top pt-3">
+                                                <b>New CheckPost? Login.</b> <a class="ml-2" href="{{ url_for('login') }}">Sign In</a>
+                                            </div>
+                                            <!-- Register Plate Number end -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page content -->
+        <div class="container-fluid mt--6 ">
+            <div class="row ">
+                <div class="col-xl-12 ">
+                    <!-- Content Sectopn 2 -->
+
+                    <!-- <div class="card bg-default "> -->
+                    <!-- <div class="card-header bg-transparent ">
+                            <div class="row align-items-center ">
+                                <div class="col ">
+                                    <h6 class="text-light text-uppercase ls-1 mb-1 ">Overview</h6>
+                                    <h5 class="h3 text-white mb-0 ">Sales value</h5>
+                                </div>
+                            </div>
+                        </div> -->
+                    <!-- <div class="card-body "> -->
+
+                    <!-- Content Sectopn 2 End -->
+                    <!-- </div> -->
+                    <!-- </div> -->
+                </div>
+            </div>
+            <div>
+                <br>
+                <br>
+                <br>
+                <!-- <br>
+                <br>
+                <br> -->
+            </div>
+            <!-- Footer -->
+            {% include 'dashboard/footer.html' %}
+            <!-- End Footer -->
+        </div>
+    </div>

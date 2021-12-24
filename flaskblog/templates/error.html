@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	{% include "includes/head.html" %}
+</head>
+
+<body>
+	<div class="row">
+		<div class="col-lg-6 col-lg-offset-3">
+			<div class="error-page text-center">
+				<h1>Error 404</h1>
+				<h3>Page Not Found</h3>
+				<p>The page you requested could not be found. Use your browsers Back button to navigate to the page or
+					use the search form to find what you are looking for.</p>
+				<!-- <form>
+						<div class="input-group input-group-lg">
+							<input type="text" placeholder="Search" class="form-control">
+								<div class="input-group-btn">
+									<button type="button" class="btn btn-default" tabindex="-1">
+										<i class="fa fa-search"></i>
+									</button>
+								</div>
+						</div>
+					</form> -->
+				<br />
+				<a href=" {{ url_for('login') }} "
+					class="nav-link {% if login %} active {% endif %} btn btn-lg btn-primary">Log In</a>
+				<!-- <a href="dashboard.html" class="btn btn-lg btn-primary">Return to previous page</a> -->
+			</div>
+		</div><!-- /.col-->
+	</div><!-- /.row -->
+	{% include "includes/scripts.html" %}
+</body>
+
+</html>
